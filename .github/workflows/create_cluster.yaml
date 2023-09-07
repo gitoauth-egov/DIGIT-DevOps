@@ -22,7 +22,7 @@ jobs:
         working-directory: infra-as-code/terraform/sample-aws
       - name: Extract cluster_name and set as env variable
         run: |
-          cluster_name_value=$(grep "cluster_name:" input.yaml | awk '{print $2}')
+          cluster_name_value=$(grep "cluster_name:" input.yaml | awk -F\" '{print $2}')
           echo "CLUSTER_NAME=$cluster_name_value" >> $GITHUB_ENV
         working-directory: infra-as-code/terraform/sample-aws
       - name: Use CLUSTER_NAME in another step
