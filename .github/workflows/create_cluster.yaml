@@ -2,7 +2,7 @@ name: DIGITClusterworkflow
 on:
   push:
     branches:
-      - release-1.27-kubernetes   
+      - "release-1.27-kubernetes"   
 jobs:
   input_validation:
     runs-on: ubuntu-latest
