@@ -7,7 +7,7 @@ cluster_name: "upgradek8s"
 ssh_key_name: "upgradek8s-ssh-key" 
 
 # Replace with public key which you want to add in your EC2 machines # ssh key which you want to add in your EC2 machines
-public_ssh_key: "ssh-rsa zxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxy"
+public_ssh_key: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDbeeZJDshcMLg/CPFMc9dxXNooGyFpoqQV7LrbRU5sEKsBbwGMMRQk1H9ZrDeureNGtgSsmaq2vGAvggKQPqgx2oMHmKHGOeFzW/tzB1Yl4iTGEk/fcB3OXTNNwY+DJtVorwZoCS/RxNbY1djb8Wg/07trIl7nlFbvtuw283ZAyZE6tRYUdd8G5IgDLXrUN/Vpqs5gV9kyB71HK4w8b35VmWywwXJ2WgAncNsx8itR2LT+fms1xYvvLZGfesaRVfalFL+yDAPkQYu7C0Q5TeaIPeP57a0AiyMAuILm98PBqzcUsCYLwk07jpBVy4xS8qjdM7XJFIQmrZwPnVzAPwzgPkbweiHW+M+CakTt3J21giJCedOsUGkOa+0zP3k8oSBC0kFNrQCwM4Y0TNlCpmfeUGydGqezTFE9hHUpRSh6g3t2rmem/lkKznT11IWq8i3sA+WauoKZsFNqHhD3gSbZYPnJ4Gttnv07bwOH30+0aIMaLjgg7h34kbtZMzo/g3E= admin@Admins-MacBook-Pro.local"
 
 # Name you want to give to your Database
 # DB name must contain only alphanumeric characters
