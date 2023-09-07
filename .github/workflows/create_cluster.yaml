@@ -246,4 +246,5 @@ jobs:
   #     - name: Terraform Destroy - Infra destruction
   #       run: terraform destroy -no-color -auto-approve -var db_password=demo123456
   #       working-directory: infra-as-code/terraform/sample-aws
+  # triggering pipeline manually
       
