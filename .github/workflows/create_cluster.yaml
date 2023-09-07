@@ -24,6 +24,7 @@ jobs:
         run: |
           cluster_name_value=$(grep "cluster_name:" input.yaml | awk '{print $2}')
           echo "CLUSTER_NAME=$cluster_name_value" >> $GITHUB_ENV  
+        working-directory: infra-as-code/terraform/sample-aws  
       - name: Change working directory
         run: echo "This command is run in the current directory"
         working-directory: infra-as-code/terraform/sample-aws/remote-state
