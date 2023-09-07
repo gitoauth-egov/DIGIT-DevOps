@@ -115,7 +115,7 @@ jobs:
           aws-iam-authenticator version  
       - name: Generate kubeconfig
         run: |
-          aws eks update-kubeconfig --region ${{ secrets.AWS_REGION }} --name k8supgrade
+          aws eks update-kubeconfig --region ${{ secrets.AWS_REGION }} --name upgradek8s
           cat ~/.kube/config > kubeconfig
       - name: Verify kubectl configuration
         run: kubectl config view 
@@ -179,7 +179,7 @@ jobs:
           aws-iam-authenticator version  
       - name: Generate kubeconfig
         run: |
-          aws eks update-kubeconfig --region ${{ secrets.AWS_REGION }} --name k8supgrade
+          aws eks update-kubeconfig --region ${{ secrets.AWS_REGION }} --name upgradek8s
           cat ~/.kube/config > kubeconfig
       - name: Verify kubectl configuration
         run: kubectl config view 
