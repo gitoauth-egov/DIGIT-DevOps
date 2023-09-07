@@ -39,6 +39,7 @@ jobs:
       - name: Extract db password and set as env variable
         run: |
           password_value=$(awk '/db:/ {flag=1; next} flag && /^        / {if ($1 == "password:") print $2; next} !/^        / {flag=0}' egov-demo-secrets.yaml)
+          echo "Extracted Password: $password_value"
           echo "DB_PASSWORD=$password_value" >> $GITHUB_ENV
         working-directory: config-as-code/environments
       - name: Printing password value
