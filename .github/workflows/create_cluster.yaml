@@ -36,6 +36,13 @@ jobs:
       - name: Updating different files based on parameters provided in input.yaml
         run: go run init.go
         working-directory: infra-as-code/terraform/scripts
+      - name: Extract db password and set as env variable
+        run: |
+          password_value=$(awk '/db:/ {flag=1; next} flag && /^        / {if ($1 == "password:") print $2; next} !/^        / {flag=0}' egov-demo-secrets.yaml)
+          echo "DB_PASSWORD=$password_value" >> $GITHUB_ENV
+        working-directory: config-as-code/environments
+      - name: Printing password value
+        run: echo "Password value is $DB_PASSWORD"      
       - name: Archive infra-as-code folder
         run: tar -czf infra-as-code.tar.gz infra-as-code/
       - name: Archive config-as-code folder
@@ -122,7 +129,7 @@ jobs:
   #         aws-iam-authenticator version  
   #     - name: Generate kubeconfig
   #       run: |
-  #         aws eks update-kubeconfig --region ${{ secrets.AWS_REGION }} --name nikhilactions
+  #         aws eks update-kubeconfig --region ${{ secrets.AWS_REGION }} --name $CLUSTER_NAME
   #         cat ~/.kube/config > kubeconfig
   #     - name: Verify kubectl configuration
   #       run: kubectl config view 
@@ -186,7 +193,7 @@ jobs:
   #         aws-iam-authenticator version  
   #     - name: Generate kubeconfig
   #       run: |
-  #         aws eks update-kubeconfig --region ${{ secrets.AWS_REGION }} --name nikhilactions
+  #         aws eks update-kubeconfig --region ${{ secrets.AWS_REGION }} --name $CLUSTER_NAME
   #         cat ~/.kube/config > kubeconfig
   #     - name: Verify kubectl configuration
   #       run: kubectl config view 
